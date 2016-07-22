@@ -1,11 +1,11 @@
 <variantcallestimator.mk
 
-VARIANTCALLESTIMATOR=`{find -L data/ -name '*.bam' \
+VARIANTCALLESTIMATOR_TARGETS=`{find -L data/ -name '*.bam' \
 	|sed -e 's#data/#results/#g' \
-		-e 's#.sam#.vcf#g' \
+		-e 's#.bam#.vcf#g' \
 }
 
-variantcallestimator:V:	$VARIANTCALLESTIMATOR
+variantcallestimator:V:	$VARIANTCALLESTIMATOR_TARGETS
 
 results/%.vcf:	data/%.bam
 	mkdir -p `dirname $target`
