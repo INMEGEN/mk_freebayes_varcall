@@ -1,0 +1,5 @@
+#! /bin/sh
+
+find -L data -name '*.bam' \
+|sed -e 's#^data/#results/#g' \
+	-e 's#\.bam$#.vcf#g'

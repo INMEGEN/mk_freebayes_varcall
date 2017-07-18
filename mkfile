@@ -1,9 +1,6 @@
-<variantcallestimator.mk
+<config.mk
 
-VARIANTCALLESTIMATOR_TARGETS=`{find -L data/ -name '*.bam' \
-	|sed -e 's#data/#results/#g' \
-		-e 's#.bam#.vcf#g' \
-}
+VARIANTCALLESTIMATOR_TARGETS=`{bin/targets}
 
 variantcallestimator:V:	$VARIANTCALLESTIMATOR_TARGETS
 
