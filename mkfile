@@ -4,7 +4,7 @@ VARIANTCALLESTIMATOR_TARGETS=`{bin/targets}
 
 variantcallestimator:V:	$VARIANTCALLESTIMATOR_TARGETS
 
-results/%.vcf:	data/%.bam
+results/vcfs/%.vcf:	data/%.bam
 	mkdir -p `dirname $target`
 	freebayes \
 		--fasta-reference $FASTA_REFERENCE \
