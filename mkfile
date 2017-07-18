@@ -9,6 +9,6 @@ results/vcfs/%.vcf:	data/%.bam
 	freebayes \
 		--fasta-reference $FASTA_REFERENCE \
 		$prereq \
-		> $target".build"
+		> $target".build" \
 	&& mv $target".build" $target
 
